@@ -5,7 +5,7 @@ import { Request, Response } from "express";
 
 router.get('/users',async (req: Request,res: Response)=>{
 
-    const users = await User.find({username:{$ne: req.body.username as string}});
+    const users = await User.find({});
 
     res.status(201).send(users);
 
