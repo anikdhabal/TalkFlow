@@ -1,5 +1,7 @@
+import user from "@/Backend/models/user";
 import NextAuth, {NextAuthOptions} from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials";
+import type { Session } from 'next-auth';
 
 
 export const authOptions: NextAuthOptions = {
@@ -21,7 +23,7 @@ export const authOptions: NextAuthOptions = {
                else{
                 return{
                     id: credentials.username,
-                    username: credentials.username,
+                    name: credentials.username,
                 }
                }
             },
@@ -30,7 +32,7 @@ export const authOptions: NextAuthOptions = {
 
     ],
     pages:{
-        signIn: '/signup',
+        signIn: '/signin',
     }
 }
 
